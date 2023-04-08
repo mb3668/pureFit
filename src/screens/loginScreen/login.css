@@ -1,0 +1,68 @@
+body {
+    background-color: #315a5c;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Alter top strip */
+.top {
+    width: 100%;
+    padding-top: 2rem;
+    background-color: red;
+    display: flex-start;
+}
+
+/* Middle input section */
+.middle {
+    position: fixed;
+    border: 5px solid #f54e42;
+    border-radius: 10px;
+    /* top, bottom, left, right 0 set to center */
+    margin: auto;
+    top: 0;
+    bottom: 5px; /* Set slightly higher than middle */
+    right: 0;
+    left: 0;
+    width: 35%; /* Sets the width size */
+    height: 25%; /* Sets the height size */
+}
+
+/* Alter bottom strip */
+.bottom {
+    position: fixed;
+    display: flex-end;
+    background-color: red;
+    width: 100%;
+    padding-top: 1rem;
+    bottom: 0;
+}
+
+/* Info in bottom strip */
+.info {
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+/* Alter login form inside middle */
+.login {
+    display: flex;
+    flex-direction: column;
+    margin: 25px;
+    align-items: center;
+}
+
+/* Alter custom button */
+.customButton {
+    border-radius: 10px;
+    margin-left: 30%;
+    background-color: red;
+}
+
+/* Username and Password fields */
+.userField {
+    border-radius: 5px;
+}
