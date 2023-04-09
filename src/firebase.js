@@ -28,6 +28,10 @@ export const signIn = async(email, password) => {
   }
 };
 
+export {
+  auth,
+};
+
 // export const onAuthStateChanged = (callback) => {
 //   onAuthStateChanged(auth, (user) => {
 //     callback(user);

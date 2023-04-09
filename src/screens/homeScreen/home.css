@@ -1,0 +1,39 @@
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    vertical-align: center;
+}
+
+.pageName {
+    display: flex-start;
+}
+
+.logoutButton {
+    margin-left: auto;
+    margin-right: 5px;
+    display: flex-end;
+}
+
+.exitButton {
+    padding: 20px 40px;
+    border-radius: 20px;
+}
+
+.personalInfo {
+    text-align: center;
+    padding-bottom: .5rem;
+}
+
+.bottom {
+    position: fixed;
+    background-color: red;
+    width: 100%;
+    padding-top: 1rem;
+    bottom: 0;
+}

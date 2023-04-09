@@ -29,6 +29,7 @@ body {
     left: 0;
     width: 35%; /* Sets the width size */
     height: 25%; /* Sets the height size */
+    background-color: white;
 }
 
 /* Alter bottom strip */

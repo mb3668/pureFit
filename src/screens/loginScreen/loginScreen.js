@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import { signIn } from '../../firebase';
+import { Navigate } from 'react-router-dom';
 import './login.css';
 
 function LoginScreen() {
     const [userEmail, setUserEmail] = useState('');
     const [userPassword, setUserPassword] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
 
+    // Handle 
     function handleUserChange(event) {
         setUserEmail(event.target.value);
     }
@@ -21,10 +25,13 @@ function LoginScreen() {
 
         try {
             const user = await signIn(userEmail, userPassword);
+            setIsLoggedIn(true);
+            setErrorMessage('');
             console.log(user);
-            // Redirect here
+
         } catch (error) {
-            console.log(error.message);
+            // console.log(error.message);
+            setErrorMessage(error.message);
         }
     }
 
@@ -34,12 +41,12 @@ function LoginScreen() {
             <div className="middle">
                 <div className="login">
                     {/* Login form */}
-                    <Form onSubmit={handleUserSubmit}><br/>
+                    <Form onSubmit={handleUserSubmit}>
 
                         {/* Username input field */}
                         <Form.Group controlId="formUsername">
                             <Form.Label>Email</Form.Label>
-                            <br></br>
+                            <br/>
                             <Form.Control className="userField"
                                 type="email"
                                 placeholder="Email"
@@ -65,11 +72,13 @@ function LoginScreen() {
                             Login
                         </Button>
                     </Form>
+                    {errorMessage && <div className="error"><p>Incorrect Login Information</p></div>}
+                    {isLoggedIn && <Navigate to="/Home" replace={false} />}
                 </div>
             </div>
             <div className="bottom">
                 <div className="info">
-                    <b>Input and store sets and rep numbers for each workout</b>
+                    <b>Input and store sets and rep numbers for each workout!</b>
                 </div>
             </div>
         </div>
