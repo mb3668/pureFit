@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import { Navigate } from 'react-router-dom';
+import { user } from '../../firebase';
 import './home.css';
 
 function HomeScreen() {
@@ -27,8 +28,13 @@ function HomeScreen() {
                 </div>
                 {userExit && <Navigate to="/" replace={true} />}
             </div>
-            <div className="body">
-                <h1>Here is the body</h1>
+            <div className="main">
+                <div className="mainBar">
+                    <h1>Current User : {user.email}</h1>
+                </div>
+                <div className="sideBar">
+                    <h1>SideBar</h1>
+                </div>
             </div>
             <div className="bottom">
                 <div className="personalInfo">

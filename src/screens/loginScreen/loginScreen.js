@@ -39,6 +39,9 @@ function LoginScreen() {
         <div className="container">
             <div className="top"><h1>PureFitness</h1></div>
             <div className="middle">
+                <div className="loginHeader">
+                    <h1>LOGIN</h1>
+                </div>
                 <div className="login">
                     {/* Login form */}
                     <Form onSubmit={handleUserSubmit}>
